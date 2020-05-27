@@ -1,16 +1,16 @@
 module.exports = function(grunt) {
- 
+    var config = require('./.screeps.json') 
     grunt.loadNpmTasks('grunt-screeps-customserver');
  
     grunt.initConfig({
         screeps: {
             options: {
-                hostname: '127.0.0.1',
-                port: '21025',
+                hostname: config.hostname,
+                port: config.port,
                 'use-https': false,
-                username: 'Maelstrom',
-                password: 'test123',
-                branch: 'default',
+                username: config.username,
+                password: config.password,
+                branch: config.branch,
                 ptr: false
             },
             dist: {
